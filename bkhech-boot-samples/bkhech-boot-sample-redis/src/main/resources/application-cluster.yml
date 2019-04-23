@@ -1,0 +1,15 @@
+spring:
+  redis:
+    password: 123456
+    cluster:
+      nodes:
+        - 192.168.77.25:6380
+        - 192.168.77.26:6380
+        - 192.168.77.27:6380
+        - 192.168.77.28:6380
+        - 192.168.77.29:6380
+        - 192.168.77.11:6380
+      max-redirects: 6
+
+logging:
+  config: classpath:logback.xml

@@ -1,0 +1,9 @@
+spring:
+  profiles:
+    active: dev
+
+logging:
+  config: classpath:logback.xml
+
+# 默认启用分页，false关闭
+#  enable-page: false

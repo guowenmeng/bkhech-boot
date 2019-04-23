@@ -1,0 +1,12 @@
+{
+  "name": "ApiDoc Of BkHech Boot Samples",
+  "version": "2.0.0",
+  "description": "ApiDoc Of BkHech Boot Samples",
+  "apidoc": {
+    "title": "BkHech Boot Samples API",
+    "url" : "https://127.0.0.1"
+  },
+  "template":{
+    "forceLanguage":"zh-cn"
+  }
+}

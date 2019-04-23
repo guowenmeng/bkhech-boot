@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.bkhech.boot</groupId>
+	<artifactId>bkhech-boot-configure-cache</artifactId>
+	<version>2.1.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>bkhech-boot-configure-cache</name>
+	<description>bkhech-boot-configure-cache project for bkhech Boot</description>
+
+	<parent>
+		<groupId>com.bkhech.boot</groupId>
+		<artifactId>bkhech-boot-configures</artifactId>
+		<version>2.1.0-SNAPSHOT</version>
+	</parent>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-cache</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.bkhech.boot</groupId>
+			<artifactId>bkhech-boot-configure-redis</artifactId>
+		</dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <scope>compile</scope>
+            <optional>true</optional>
+        </dependency>
+
+
+    </dependencies>
+
+
+
+</project>

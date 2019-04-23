@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starters</artifactId>
+        <version>2.0.5.RELEASE</version>
+    </parent>
+
+    <groupId>com.bkhech.boot</groupId>
+    <artifactId>bkhech-boot</artifactId>
+    <version>2.1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>BkHech Boot</name>
+    <description>bkhech's spring boot</description>
+
+    <developers>
+        <developer>
+            <name>Brian</name>
+            <email>guowenmeng24@163.com</email>
+        </developer>
+    </developers>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <spring.boot.version>2.0.5.RELEASE</spring.boot.version>
+        <bkhech.boot.version>2.1.0-SNAPSHOT</bkhech.boot.version>
+        <guava.version>18.0</guava.version>
+        <fastjson.version>1.2.46</fastjson.version>
+        <spring.boot.mybatis.version>1.3.1</spring.boot.mybatis.version>
+        <druid.version>1.1.8</druid.version>
+        <netty-socketio.version>1.7.7</netty-socketio.version>
+    </properties>
+
+    <modules>
+        <module>bkhech-boot-commons</module>
+        <module>bkhech-boot-starters</module>
+        <module>bkhech-boot-autoconfigure</module>
+        <module>bkhech-boot-samples</module>
+        <module>bkhech-boot-configures</module>
+        <module>bkhech-boot-mybatis-extend</module>
+    </modules>
+
+    <!--<build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>2.3</version>
+                <configuration>
+                    <generateBackupPoms>false</generateBackupPoms>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <configuration>
+                    <attach>true</attach>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>-->
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- commons -->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.corundumstudio.socketio</groupId>
+                <artifactId>netty-socketio</artifactId>
+                <version>${netty-socketio.version}</version>
+            </dependency>
+
+            <!-- alibaba -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+
+            <!-- mybatis extend-->
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis</artifactId>
+                <version>3.4.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.bkhech.mybatis.extend</groupId>
+                <artifactId>bkhech-boot-mybatis-extend</artifactId>
+                <version>${bkhech.boot.version}</version>
+            </dependency>
+
+
+            <!-- starters -->
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${spring.boot.mybatis.version}</version>
+            </dependency>
+
+            <!-- bkhech boot -->
+            <dependency>
+                <groupId>com.bkhech.boot</groupId>
+                <artifactId>bkhech-boot-commons</artifactId>
+                <version>${bkhech.boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.bkhech.boot</groupId>
+                <artifactId>bkhech-boot-autoconfigure</artifactId>
+                <version>${bkhech.boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.bkhech.boot</groupId>
+                <artifactId>bkhech-boot-configures</artifactId>
+                <version>${bkhech.boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.bkhech.boot</groupId>
+                <artifactId>bkhech-boot-starters</artifactId>
+                <version>${bkhech.boot.version}</version>
+            </dependency>
+
+            <!-- bkhech configure -->
+            <dependency>
+                <groupId>com.bkhech.boot</groupId>
+                <artifactId>bkhech-boot-configure-reactive</artifactId>
+                <version>${bkhech.boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.bkhech.boot</groupId>
+                <artifactId>bkhech-boot-configure-mvc</artifactId>
+                <version>${bkhech.boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.bkhech.boot</groupId>
+                <artifactId>bkhech-boot-configure-mybatis</artifactId>
+                <version>${bkhech.boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.bkhech.boot</groupId>
+                <artifactId>bkhech-boot-configure-web</artifactId>
+                <version>${bkhech.boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.bkhech.boot</groupId>
+                <artifactId>bkhech-boot-configure-netty</artifactId>
+                <version>${bkhech.boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.bkhech.boot</groupId>
+                <artifactId>bkhech-boot-configure-common</artifactId>
+                <version>${bkhech.boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.bkhech.boot</groupId>
+                <artifactId>bkhech-boot-configure-redis</artifactId>
+                <version>${bkhech.boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.bkhech.boot</groupId>
+                <artifactId>bkhech-boot-configure-cache</artifactId>
+                <version>${bkhech.boot.version}</version>
+            </dependency>
+
+            <!-- bkhech starters -->
+            <dependency>
+                <groupId>com.bkhech.boot</groupId>
+                <artifactId>bkhech-boot-starter-reactive</artifactId>
+                <version>${bkhech.boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.bkhech.boot</groupId>
+                <artifactId>bkhech-boot-starter-mvc</artifactId>
+                <version>${bkhech.boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.bkhech.boot</groupId>
+                <artifactId>bkhech-boot-starter-mybatis</artifactId>
+                <version>${bkhech.boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.bkhech.boot</groupId>
+                <artifactId>bkhech-boot-starter-test</artifactId>
+                <version>${bkhech.boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.bkhech.boot</groupId>
+                <artifactId>bkhech-boot-starter-netty</artifactId>
+                <version>${bkhech.boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.bkhech.boot</groupId>
+                <artifactId>bkhech-boot-starter-common</artifactId>
+                <version>${bkhech.boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.bkhech.boot</groupId>
+                <artifactId>bkhech-boot-starter-redis</artifactId>
+                <version>${bkhech.boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.bkhech.boot</groupId>
+                <artifactId>bkhech-boot-starter-cache</artifactId>
+                <version>${bkhech.boot.version}</version>
+            </dependency>
+
+
+        </dependencies>
+    </dependencyManagement>
+
+</project>

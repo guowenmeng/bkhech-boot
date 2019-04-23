@@ -1,0 +1,39 @@
+chart:
+  #柱状图、折线图
+  histogram-or-lines:
+    - index: 1   #图表索引值。根据需要选择指定索引位的配置
+      charts:
+        title: 累计用户量
+        xLabel: 人数/间隔(天)
+        yLabel: 人数/间隔(天)
+        description: 图表文字说明
+    - index: 2
+      charts:
+        title: 累计用户量2
+        xLabel: 人数/间隔(天)2
+        yLabel: 人数/间隔(天)2
+        description: 图表文字说明2
+  #饼状图、漏斗图
+  pie-or-funnels:
+    - index: 1
+      charts:
+        title: 累计用户量pie
+        yLabel: 人数/间隔(天)pie
+        description: 图表文字说明pie
+  #雷达图
+  radars:
+    - index: 1
+      charts:
+        title: 累计用户量radar
+        yLabel: 人数/间隔(天)radar
+        description: 图表文字说明radar
+  #地图
+  maps:
+    - index: 1
+      charts:
+        title: 累计用户量map
+        yLabel: 人数/间隔(天)map
+        description: 图表文字说明map
+# Spel
+theadA: "{{key2: '标题2'}, {key3: '标题3'}, {akey: '标题'}, {key1: '标题1'}}"
+

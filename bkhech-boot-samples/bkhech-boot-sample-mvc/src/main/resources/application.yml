@@ -1,0 +1,16 @@
+spring:
+  profiles:
+    active: dev
+server:
+  port: 8080
+  servlet:
+    context-path: /sample
+
+logging:
+  config: classpath:logback.xml
+
+mybatis:
+  mapper-locations: classpath*:com/kingnet/boot/sample/mvc/mapper/**/*Mapper.xml
+
+# 默认启用分页，false关闭
+#  enable-page: false

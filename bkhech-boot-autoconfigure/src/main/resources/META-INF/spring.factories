@@ -1,0 +1,9 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.bkhech.boot.autoconfigure.reactive.webflux.ExceptionHandlerAutoConfiguration,\
+com.bkhech.boot.autoconfigure.mvc.MvcAutoConfiguration,\
+com.bkhech.boot.autoconfigure.mvc.HttpErrorAutoConfiguration,\
+com.bkhech.boot.autoconfigure.mybatis.MyBatisAutoConfiguration,\
+com.bkhech.boot.autoconfigure.netty.NettyAutoConfiguration,\
+com.bkhech.boot.autoconfigure.redis.RedisConfigAutoConfiguration,\
+com.bkhech.boot.autoconfigure.cache.CacheConfigAutoConfiguration,\
+com.bkhech.boot.autoconfigure.base.BaseAutoConfiguration

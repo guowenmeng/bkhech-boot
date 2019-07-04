@@ -1,6 +1,12 @@
 package com.bkhech.boot.commons.util;
 
+import org.springframework.cglib.core.Local;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * RandomUtil
@@ -43,6 +49,21 @@ public class RandomUtil {
             }
         }
         return result.toString();
+    }
+
+    /**
+     * 返回一个随机数 或者批次数
+     * @param origin the least value returned
+     * @param bound the upper bound (exclusive)
+     * @return a pseudorandom {@code int} value = 当前时间+ bound和origin之间的一个随机数值
+     *   时间format是yyyyMMddHHmmss
+     * @throws IllegalArgumentException if {@code origin} is greater than
+     *         or equal to {@code bound}
+     */
+    public static String generateBatchNo(int bound, int origin) {
+        ThreadLocalRandom threadLocalRandom = ThreadLocalRandom.current();
+        return LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss"))
+                + threadLocalRandom.nextInt(bound, origin);
     }
 
 }

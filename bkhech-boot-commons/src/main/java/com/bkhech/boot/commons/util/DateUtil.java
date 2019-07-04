@@ -1,10 +1,13 @@
 package com.bkhech.boot.commons.util;
 
 import java.text.SimpleDateFormat;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.*;
 
 /**
- * yangli
+ * @author guowm[guowm@5fun.com]
+ * @date 2019/7/4
  */
 public class DateUtil {
     /*
@@ -339,6 +342,38 @@ public class DateUtil {
             dateString = DateToString(myDate, newParttern);
         }
         return dateString;
+    }
+
+    // 获得本周一0点时间
+    public static Date getTimesWeekmorning() {
+        Calendar cal = Calendar.getInstance();
+        cal.set(cal.get(Calendar.YEAR), cal.get(Calendar.MONDAY), cal.get(Calendar.DAY_OF_MONTH), 0, 0, 0);
+        cal.set(Calendar.DAY_OF_WEEK, Calendar.MONDAY);
+        return cal.getTime();
+    }
+
+    // 获得本周日24点时间
+    public static Date getTimesWeeknight() {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(getTimesWeekmorning());
+        cal.add(Calendar.DAY_OF_WEEK, Calendar.SATURDAY);
+        return cal.getTime();
+    }
+
+    // 获得指定时间的零点时间
+    public static Date getDateZeroTime(Date date) {
+        Calendar cal = Calendar.getInstance();
+        ZonedDateTime zonedDateTime = date.toInstant().atZone(ZoneId.systemDefault());
+        cal.set(zonedDateTime.getYear(), zonedDateTime.getMonthValue(), zonedDateTime.getDayOfMonth(), 0, 0, 0);
+        return cal.getTime();
+    }
+
+    // 获得指定时间的第二天的零点时间
+    public static Date getNextDayZeroTime(Date date) {
+        Calendar cal = Calendar.getInstance();
+        ZonedDateTime zonedDateTime = date.toInstant().atZone(ZoneId.systemDefault()).plusDays(1);
+        cal.set(zonedDateTime.getYear(), zonedDateTime.getMonthValue(), zonedDateTime.getDayOfMonth(), 0, 0, 0);
+        return cal.getTime();
     }
 
     /**

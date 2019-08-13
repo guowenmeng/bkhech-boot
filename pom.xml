@@ -201,6 +201,12 @@
                 <version>${bkhech.boot.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>com.bkhech.boot</groupId>
+                <artifactId>bkhech-boot-configure-kafka</artifactId>
+                <version>${bkhech.boot.version}</version>
+            </dependency>
+
             <!-- bkhech starters -->
             <dependency>
                 <groupId>com.bkhech.boot</groupId>
@@ -250,6 +256,11 @@
                 <version>${bkhech.boot.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>com.bkhech.boot</groupId>
+                <artifactId>bkhech-boot-starter-kafka</artifactId>
+                <version>${bkhech.boot.version}</version>
+            </dependency>
 
         </dependencies>
     </dependencyManagement>

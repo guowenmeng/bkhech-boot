@@ -24,6 +24,7 @@
 		<module>bkhech-boot-starter-common</module>
 		<module>bkhech-boot-starter-redis</module>
 		<module>bkhech-boot-starter-cache</module>
+        <module>bkhech-boot-starter-kafka</module>
     </modules>
 
 </project>

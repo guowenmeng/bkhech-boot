@@ -72,6 +72,13 @@
             <optional>true</optional>
         </dependency>
 
+        <dependency>
+            <groupId>com.bkhech.boot</groupId>
+            <artifactId>bkhech-boot-configure-kafka</artifactId>
+            <scope>compile</scope>
+            <optional>true</optional>
+        </dependency>
+
     </dependencies>
 
 </project>

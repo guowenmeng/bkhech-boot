@@ -24,6 +24,7 @@
 		<module>bkhech-boot-configure-common</module>
 		<module>bkhech-boot-configure-redis</module>
 		<module>bkhech-boot-configure-cache</module>
+        <module>bkhech-boot-configure-kafka</module>
     </modules>
 
     <dependencies>

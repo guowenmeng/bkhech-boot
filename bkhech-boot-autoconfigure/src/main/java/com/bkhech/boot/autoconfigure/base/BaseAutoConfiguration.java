@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 import javax.annotation.PostConstruct;
 
 /**
- * BaseAutoConfigure
+ * BaseAutoConfiguration
  * <p>
  * Created by guowm on 18-6-1.
  */
@@ -22,6 +22,6 @@ public class BaseAutoConfiguration {
 
     @PostConstruct
     public void init() {
-        ApplicationContextUtil.setApplicationContext(context);
+//        ApplicationContextUtil.setApplicationContext(context);
     }
 }

@@ -81,7 +81,8 @@ public class ApplicationContextUtil implements ApplicationContextAware, Embedded
      */
     public static String getPropertiesValue(String name) {
         try {
-            return stringValueResolver.resolveStringValue( "${" + name + "}");
+            return applicationContext.getEnvironment().getProperty(name);
+//            return stringValueResolver.resolveStringValue( "${" + name + "}");
         } catch (Exception e) {
             logger.error("环境变量中没有名为“{}”的配置", name);
             // 若获取失败则返回null

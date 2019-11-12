@@ -3,6 +3,7 @@ package com.bkhech.boot.sample.mvc.dto;
 import com.bkhech.boot.sample.mvc.validator.CompositeObj;
 import com.bkhech.boot.sample.mvc.validator.Phone;
 
+import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.util.Date;
 import java.util.List;
@@ -74,6 +75,19 @@ public class ParametersValidationDto {
     @CompositeObj
     @NotNull(message = "compositeParam can not null")
     private CompositeParam compositeParam;
+
+    /** 在controller层实体前，必须加入 @Valid才有效 */
+    @Valid
+    @NotEmpty
+    private List<CompositeParam2> CompositeParam2s;
+
+    public List<CompositeParam2> getCompositeParam2s() {
+        return CompositeParam2s;
+    }
+
+    public void setCompositeParam2s(List<CompositeParam2> compositeParam2s) {
+        CompositeParam2s = compositeParam2s;
+    }
 
     public String getVersion() {
         return version;

@@ -15,6 +15,17 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
  */
 public class RedisConfig {
 
+    /**
+     * 1.https://www.jianshu.com/p/5f9cc7a70bd4
+     * 序列化使用的jdkSerializeable，存储二进制字节码，key值出现 \xac\xed\x00\x05t\x00\tb，
+     * 虽然不影响程序读写，但占用更大内存，且不易于查看.
+     * 查询资料发现redisTemplate 默认的序列化方式为 jdkSerializeable,
+     * StringRedisTemplate的默认序列化方式为StringRedisSerializer
+     * 所以自定义序列化类
+     *
+     * 2.多redis源配置
+     * https://www.jianshu.com/p/5b02a7097eaf
+     */
     @Bean
     public RedisTemplate<String, ?> redisTemplate(RedisConnectionFactory redisConnectionFactory) {
         RedisTemplate<String, Object> template = new RedisTemplate<>();

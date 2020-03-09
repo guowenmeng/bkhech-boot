@@ -53,13 +53,13 @@ public class RandomUtil {
      * @param origin the least value returned
      * @param bound the upper bound (exclusive)
      * @return a pseudorandom {@code int} value = 当前时间+ bound和origin之间的一个随机数值
-     *   时间format是yyyyMMddHHmmss
+     *   时间format是yyyyMMddHHmmssSSS
      * @throws IllegalArgumentException if {@code origin} is greater than
      *         or equal to {@code bound}
      */
     public static String generateBatchNo(int bound, int origin) {
         ThreadLocalRandom threadLocalRandom = ThreadLocalRandom.current();
-        return LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss"))
+        return LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmssSSS"))
                 + threadLocalRandom.nextInt(bound, origin);
     }
 

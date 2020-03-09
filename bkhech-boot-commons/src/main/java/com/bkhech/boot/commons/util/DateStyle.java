@@ -1,7 +1,8 @@
 package com.bkhech.boot.commons.util;
 
 /**
- * yangli
+ * @author guowm[guowm@5fun.com]
+ * @date 2019/12/9
  */
 public enum DateStyle {
 

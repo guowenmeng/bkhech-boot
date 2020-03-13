@@ -29,9 +29,9 @@ import java.util.function.BiConsumer;
  * Created by guowm on 18-5-4.
  */
 @Component
-public class KingnetExceptionHandler extends DefaultErrorWebExceptionHandler {
+public class BkhechExceptionHandler extends DefaultErrorWebExceptionHandler {
 
-    private static final Log logger = LogFactory.getLog(KingnetExceptionHandler.class);
+    private static final Log logger = LogFactory.getLog(BkhechExceptionHandler.class);
 
     private static final Map<HttpStatus.Series, String> SERIES_VIEWS;
 
@@ -52,7 +52,7 @@ public class KingnetExceptionHandler extends DefaultErrorWebExceptionHandler {
      * @param errorProperties    the error configuration properties
      * @param applicationContext the current application context
      */
-    public KingnetExceptionHandler(ErrorAttributes errorAttributes, ResourceProperties resourceProperties, ErrorProperties errorProperties, ApplicationContext applicationContext) {
+    public BkhechExceptionHandler(ErrorAttributes errorAttributes, ResourceProperties resourceProperties, ErrorProperties errorProperties, ApplicationContext applicationContext) {
         super(errorAttributes, resourceProperties, errorProperties, applicationContext);
         this.errorProperties = errorProperties;
     }
@@ -99,7 +99,6 @@ public class KingnetExceptionHandler extends DefaultErrorWebExceptionHandler {
                 .doOnNext((resp) -> logError(request, errorStatus));
     }
 
-    @Override
     protected void logError(ServerRequest request, HttpStatus errorStatus) {
         Throwable ex = getError(request);
         log(request, ex, (errorStatus.is5xxServerError() ? logger::error : logger::warn));
@@ -116,7 +115,7 @@ public class KingnetExceptionHandler extends DefaultErrorWebExceptionHandler {
     }
 
     private String buildMessage(ServerRequest request, Throwable ex) {
-        StringBuilder message = new StringBuilder("Kingnet Failed to handle request [");
+        StringBuilder message = new StringBuilder("Bkhech Failed to handle request [");
         message.append(request.methodName());
         message.append(" ");
         message.append(request.uri());

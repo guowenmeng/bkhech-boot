@@ -50,7 +50,7 @@ public class ExceptionHandlerAutoConfiguration {
 //    @Bean
 //    public ErrorWebExceptionHandler errorWebExceptionHandler(
 //            ErrorAttributes errorAttributes) {
-//        KingnetExceptionHandler exceptionHandler = new KingnetExceptionHandler(
+//        BkhechExceptionHandler exceptionHandler = new BkhechExceptionHandler(
 //                errorAttributes, this.resourceProperties,
 //                this.serverProperties.getError(), this.applicationContext);
 //        exceptionHandler.setViewResolvers(this.viewResolvers);

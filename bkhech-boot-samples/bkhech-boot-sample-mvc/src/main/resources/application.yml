@@ -10,7 +10,7 @@ logging:
   config: classpath:logback.xml
 
 mybatis:
-  mapper-locations: classpath*:com/kingnet/boot/sample/mvc/mapper/**/*Mapper.xml
+  mapper-locations: classpath*:com/bkhech/boot/sample/mvc/mapper/**/*Mapper.xml
 
 # 默认启用分页，false关闭
 #  enable-page: false

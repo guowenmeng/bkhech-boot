@@ -50,7 +50,7 @@ public class ExceptionHandlers extends ResponseStatusExceptionHandler {
 //    }
 //
 //    private String buildMessage(ServerHttpRequest request, Throwable ex) {
-//        return "Kingnet Failed to handle request [" + request.getMethod() + " " + request.getURI() + "]: " + ex.getMessage();
+//        return "Bkhech Failed to handle request [" + request.getMethod() + " " + request.getURI() + "]: " + ex.getMessage();
 //    }
 //
 //    @Nullable

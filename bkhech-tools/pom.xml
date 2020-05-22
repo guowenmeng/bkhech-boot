@@ -20,6 +20,7 @@
 
     <modules>
         <module>bkhech-rate-limiter-distributed</module>
+        <module>spring-cassandra-example</module>
     </modules>
 
     <properties>

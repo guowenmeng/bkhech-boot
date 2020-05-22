@@ -1,0 +1,6 @@
+spring:
+  data:
+    cassandra:
+      keyspace-name: person
+      contact-points: 192.168.71.187:9042
+      local-datacenter: datacenter1

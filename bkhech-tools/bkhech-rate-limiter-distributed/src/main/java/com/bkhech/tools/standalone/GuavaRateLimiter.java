@@ -4,6 +4,7 @@ import com.google.common.util.concurrent.RateLimiter;
 
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -13,16 +14,17 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class GuavaRateLimiter {
 
-    private RateLimiter rateLimiter = RateLimiter.create(0.5);
+    //令牌桶算法
+    private RateLimiter rateLimiter = RateLimiter.create(10);
 
-    private AtomicInteger counter = new AtomicInteger();
+
+    //漏桶算法
+    private RateLimiter rateLimiterTong = RateLimiter.create(1, 1, TimeUnit.SECONDS);
+
 
     public void rateLimiter() {
-        boolean acquire = rateLimiter.tryAcquire();
-        if (acquire) {
-            int andIncrement = counter.incrementAndGet();
-            System.out.println(LocalTime.now().format(DateTimeFormatter.ofPattern("mm:ss:SSS")) + "--" + andIncrement);
-        }
+        boolean b = rateLimiterTong.tryAcquire();
+        System.out.println("b = " + b);
     }
 
 }

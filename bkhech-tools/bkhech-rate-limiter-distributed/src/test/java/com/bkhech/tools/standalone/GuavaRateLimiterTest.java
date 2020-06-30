@@ -3,6 +3,7 @@ package com.bkhech.tools.standalone;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
@@ -14,24 +15,27 @@ class GuavaRateLimiterTest {
 
     GuavaRateLimiter guavaRateLimiter = new GuavaRateLimiter();
 
+    CountDownLatch countDownLatch = new CountDownLatch(1);
 
 
     @Test
-    public void rateLimiter() throws IOException {
-        ExecutorService executorService = Executors.newFixedThreadPool(10);
+    public void rateLimiter() throws IOException, InterruptedException {
+        TimeUnit.SECONDS.sleep(5);
+        ExecutorService executorService = Executors.newFixedThreadPool(30);
         Runnable task = () -> {
+//            try {
+//                countDownLatch.await();
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
             guavaRateLimiter.rateLimiter();
         };
 
-        IntStream.range(1, 11).forEach(i -> {
-            try {
-                TimeUnit.SECONDS.sleep(1);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+        IntStream.range(1, 30).forEach(i -> {
             executorService.execute(task);
         });
 
+//        countDownLatch.countDown();
         System.in.read();
 
     }

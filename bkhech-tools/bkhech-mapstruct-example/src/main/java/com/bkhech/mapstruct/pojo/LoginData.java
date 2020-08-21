@@ -17,4 +17,6 @@ public class LoginData {
 
     private String loginCode;
 
+    private String multiSourceTestProperty;
+
 }

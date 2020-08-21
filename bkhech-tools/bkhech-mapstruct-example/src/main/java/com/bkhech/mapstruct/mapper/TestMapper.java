@@ -15,7 +15,7 @@ import java.util.List;
  * for resolve Exception when code is ""
  *     java.lang.NumberFormatException: For input string: ""
  */
-@Mapper(uses = MyStringIntegerMapper.class)
+@Mapper(uses = MyMapperUtil.class)
 public interface TestMapper {
 
     TestMapper INSTANCE = Mappers.getMapper(TestMapper.class);
@@ -35,4 +35,6 @@ public interface TestMapper {
      * @return
      */
     List<LoginData> loginRequestToLoginDatas(List<LoginRequest> loginRequest);
+
+
 }

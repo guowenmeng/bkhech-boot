@@ -12,7 +12,8 @@ import org.mapstruct.ReportingPolicy;
  *  String to Integer
  */
 @Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE, unmappedSourcePolicy = ReportingPolicy.IGNORE)
-public class MyStringIntegerMapper {
+public class MyMapperUtil {
+
     public Integer stringToInteger(String string) {
         return string != null && !string.isEmpty() ? Integer.parseInt(string) : null;
     }

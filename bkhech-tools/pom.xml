@@ -20,7 +20,8 @@
 
     <modules>
         <module>bkhech-rate-limiter-distributed</module>
-        <module>spring-cassandra-example</module>
+        <module>bkhech-spring-cassandra-example</module>
+        <module>bkhech-mapstruct-example</module>
     </modules>
 
     <properties>

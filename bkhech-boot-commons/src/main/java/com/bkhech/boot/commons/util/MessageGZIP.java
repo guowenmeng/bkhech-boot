@@ -12,7 +12,7 @@ import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 
 /**
- * @author guowm[guowm@5fun.com]
+ * @author guowm
  * @date 2020/6/28
  * 对字符串进行gzip压缩，进行Base64加、解密
  */

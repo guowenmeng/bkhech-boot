@@ -1,7 +1,7 @@
 package com.bkhech.boot.commons.bean;
 
 /**
- * @author guowm[guowm@5fun.com]
+ * @author guowm
  * @date 2019/7/4
  * 测试实体
  */

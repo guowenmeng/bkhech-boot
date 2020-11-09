@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
 /**
- * @author guowm[guowm@5fun.com]
+ * @author guowm
  * @date 2019/8/13
  */
 @Configuration

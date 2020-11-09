@@ -4,7 +4,7 @@ import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.Table;
 
 /**
- * @author guowm[guowm@5fun.com]
+ * @author guowm
  * @date 2020/3/13
  */
 

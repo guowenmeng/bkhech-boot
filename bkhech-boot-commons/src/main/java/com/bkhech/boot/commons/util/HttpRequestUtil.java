@@ -20,7 +20,7 @@ import java.net.URLConnection;
 import java.nio.charset.Charset;
 
 /**
- * @author guowm[guowm@5fun.com]
+ * @author guowm
  * @date 2019/7/4
  */
 public class HttpRequestUtil {

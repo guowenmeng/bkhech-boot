@@ -59,7 +59,7 @@
     <logger name="io.lettuce.core" level="info"/>
     <logger name="org.mybatis.spring" level="info"/>
 
-    <logger name="com.bkhech.boot.sample.mvc.mapper" level="debug"/>
+    <logger name="com.bkhech.boot.sample.swagger.mapper" level="debug"/>
 
 
     <!--<springProfile name="pro">

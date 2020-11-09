@@ -6,7 +6,7 @@ import java.time.ZonedDateTime;
 import java.util.*;
 
 /**
- * @author guowm[guowm@5fun.com]
+ * @author guowm
  * @date 2019/7/4
  */
 public class DateUtil {

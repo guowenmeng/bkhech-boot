@@ -11,7 +11,7 @@ import java.time.Clock;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author guowm[guowm@5fun.com]
+ * @author guowm
  * @date 2018/12/26
  */
 @Component

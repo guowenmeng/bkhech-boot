@@ -22,6 +22,7 @@
         <module>bkhech-boot-sample-netty</module>
         <module>bkhech-boot-sample-redis</module>
         <module>bkhech-boot-sample-cache</module>
+        <module>bkhech-boot-sample-swagger</module>
     </modules>
 
 </project>

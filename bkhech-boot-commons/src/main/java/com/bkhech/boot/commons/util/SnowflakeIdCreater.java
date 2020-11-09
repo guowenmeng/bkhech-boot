@@ -1,7 +1,7 @@
 package com.bkhech.boot.commons.util;
 
 /**
- * @author guowm[guowm@5fun.com]
+ * @author guowm
  * @date 2019/7/4
  * 获取随机数, 分布式存储下可用
  */

@@ -10,7 +10,7 @@ import java.lang.reflect.Method;
 import java.util.List;
 
 /**
- * @author guowm[guowm@5fun.com]
+ * @author guowm
  * @date 2019/7/4
  * dom4j 解析xml
  */

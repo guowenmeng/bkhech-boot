@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * @author guowm[guowm@5fun.com]
+ * @author guowm
  * @date 2019/1/17
  * 内存分页
  */

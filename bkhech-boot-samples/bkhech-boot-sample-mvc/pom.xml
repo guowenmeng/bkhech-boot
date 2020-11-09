@@ -11,7 +11,7 @@
     </parent>
 
     <groupId>com.bkhech.boot</groupId>
-    <artifactId>bkhech-boot-sample-mvc</artifactId>
+    <artifactId>bkhech-boot-sample-swagger</artifactId>
     <version>2.1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
@@ -22,7 +22,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring.boot.version}</version>
                 <configuration>
-                    <mainClass>com.bkhech.boot.sample.mvc.Application</mainClass>
+                    <mainClass>com.bkhech.boot.sample.swagger.Application</mainClass>
                 </configuration>
                 <executions>
                     <execution>

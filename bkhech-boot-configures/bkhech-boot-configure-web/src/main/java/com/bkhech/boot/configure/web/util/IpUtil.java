@@ -3,7 +3,7 @@ package com.bkhech.boot.configure.web.util;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * @author guowm[guowm@5fun.com]
+ * @author guowm
  * @date 2019/12/9
  */
 public class IpUtil {

@@ -1,0 +1,13 @@
+spring:
+  profiles:
+    active: dev
+server:
+  port: 8080
+  servlet:
+    context-path: /sample
+
+logging:
+  config: classpath:logback.xml
+
+# 默认启用分页，false关闭
+#  enable-page: false

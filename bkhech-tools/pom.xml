@@ -22,7 +22,6 @@
         <module>bkhech-rate-limiter-distributed</module>
         <module>bkhech-spring-cassandra-example</module>
         <module>bkhech-mapstruct-example</module>
-        <module>bkhech-elastic-job-lite</module>
         <module>bkhech-xxljob-example</module>
     </modules>
 

@@ -50,6 +50,8 @@
         <module>bkhech-boot-samples</module>
         <module>bkhech-boot-configures</module>
         <module>bkhech-boot-mybatis-extend</module>
+        <module>bkhech-tools</module>
+        <module>bkhech-dive-spring</module>
     </modules>
 
     <!--<build>

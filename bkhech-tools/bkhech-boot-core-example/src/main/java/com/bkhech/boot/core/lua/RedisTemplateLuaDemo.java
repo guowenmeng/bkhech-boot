@@ -1,4 +1,4 @@
-package com.bkhech.boot.core.redis.lua;
+package com.bkhech.boot.core.lua;
 
 import com.alibaba.fastjson.support.spring.FastJsonRedisSerializer;
 import lombok.extern.slf4j.Slf4j;

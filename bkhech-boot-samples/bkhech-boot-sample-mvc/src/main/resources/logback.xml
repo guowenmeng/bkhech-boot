@@ -35,16 +35,19 @@
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <fileNamePattern>${log_home}/${app_name}-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
-                <!--日志文件最大大小 -->
-                <maxFileSize>1024 MB</maxFileSize>
+                <!-- 每个日志文件的最大值 -->
+                <maxFileSize>256MB</maxFileSize>
             </timeBasedFileNamingAndTriggeringPolicy>
-            <!--日志文件保留天数 -->
+            <!-- 总的日志文件上限大小，达到指定大小后删除旧的日志文件 -->
+            <totalSizeCap>1GB</totalSizeCap>
+            <!--只保留最近30天的日志-->
             <maxHistory>30</maxHistory>
         </rollingPolicy>
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
             <level>debug</level>
         </filter>
-        <prudent>true</prudent>
+        <!--  如果是 true，日志会被安全的写入文件，即使其他的FileAppender也在向此文件做写入操作，效率低，默认是 false。-->
+        <prudent>false</prudent>
     </appender>
 
     <!-- 日志输出级别 -->
@@ -88,6 +91,9 @@
 
 
         参考地址：
+            https://blog.csdn.net/qwerdfnd/article/details/102631684
+            https://blog.csdn.net/21aspnet/article/details/104253841
+            https://www.cnblogs.com/dw3306/p/12372871.html
             http://blog.didispace.com/springbootlog/
             https://juejin.im/post/5c246da5f265da613e224bc3
             https://blog.csdn.net/qq853632587/article/details/78222780

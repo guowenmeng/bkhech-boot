@@ -7,7 +7,6 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.script.DefaultRedisScript;
 import org.springframework.data.redis.core.script.DigestUtils;
 import org.springframework.data.redis.core.script.RedisScript;
-import org.springframework.data.redis.core.script.ScriptExecutor;
 import org.springframework.scripting.support.ResourceScriptSource;
 import org.springframework.stereotype.Component;
 
@@ -56,6 +55,15 @@ public class RedisTemplateLuaDemo {
                 keyList,
                 argvMap);
         System.out.println(ret);
+
+        // 方式二：更底层的方式
+//        redisTemplate.execute((RedisCallback<List>) connection -> connection.eval(
+//                scriptString.getBytes(StandardCharsets.UTF_8),
+//                ReturnType.INTEGER,
+//                1,
+//                JSONArray.toJSONBytes(keyList),
+//                JSONArray.toJSONBytes(argvMap)
+//        ));
     }
 
 

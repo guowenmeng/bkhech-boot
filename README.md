@@ -7,7 +7,7 @@
 
 # bkhech boot
 
-    BkHech Boot是基于Spring Boot 2.0.4.RELEASE构建，一套支持自动配置的快速开发脚手架。
+    bkhech boot是基于Spring Boot 2.0.4.RELEASE构建，一套支持自动配置的快速开发脚手架。
     对以下项目做了集成和自动配置。
  - spring-mvc
  - spring-webflux

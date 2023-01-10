@@ -62,12 +62,12 @@ public class BkhechExceptionHandler extends DefaultErrorWebExceptionHandler {
     protected Mono<ServerResponse> renderErrorView(ServerRequest request) {
         boolean includeStackTrace = isIncludeStackTrace(request, MediaType.TEXT_HTML);
         Map<String, Object> error = getErrorAttributes(request, includeStackTrace);
-        HttpStatus errorStatus = getHttpStatus(error);
+        final HttpStatus errorStatus = HttpStatus.valueOf(getHttpStatus(error));
         ServerResponse.BodyBuilder responseBody = ServerResponse.status(errorStatus)
                 .contentType(MediaType.TEXT_HTML);
         Flux<ServerResponse> result = Flux
-                .just("error/" + errorStatus.toString(),
-                        "error/" + SERIES_VIEWS.get(errorStatus.series()), "error/error")
+                .just("error/" + errorStatus,
+                        "error/" + SERIES_VIEWS.get(errorStatus), "error/error")
                 .flatMap((viewName) -> renderErrorView(viewName, responseBody, error));
         if (this.errorProperties.getWhitelabel().isEnabled()) {
             result = result.switchIfEmpty(renderDefaultErrorView(responseBody, error));
@@ -92,7 +92,7 @@ public class BkhechExceptionHandler extends DefaultErrorWebExceptionHandler {
         ResultResponse<String> resultResponse = ResultResponse.failed();
         logger.debug(error);
 
-        HttpStatus errorStatus = getHttpStatus(error);
+        HttpStatus errorStatus = HttpStatus.valueOf(getHttpStatus(error));
         return ServerResponse.status(getHttpStatus(error))
                 .contentType(MediaType.APPLICATION_JSON_UTF8)
                 .body(BodyInserters.fromObject(resultResponse))

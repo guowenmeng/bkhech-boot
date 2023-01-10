@@ -1,9 +1,8 @@
 package com.bkhech.boot.commons.util;
 
+import cn.hutool.core.codec.Base64;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import sun.misc.BASE64Decoder;
-import sun.misc.BASE64Encoder;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -22,6 +21,7 @@ public class MessageGZIP {
 
     /**
      * 将字符串压缩后Base64
+     *
      * @param primStr 待加压加密函数
      * @return
      */
@@ -30,10 +30,10 @@ public class MessageGZIP {
             return primStr;
         }
         try (ByteArrayOutputStream out = new ByteArrayOutputStream();
-             GZIPOutputStream gout = new GZIPOutputStream(out)){
+             GZIPOutputStream gout = new GZIPOutputStream(out)) {
             gout.write(primStr.getBytes("UTF-8"));
             gout.flush();
-            return new BASE64Encoder().encode(out.toByteArray());
+            return Base64.encode(out.toByteArray());
         } catch (IOException e) {
             log.error("对字符串进行加压加密操作失败：", e);
             return null;
@@ -42,6 +42,7 @@ public class MessageGZIP {
 
     /**
      * 将压缩并Base64后的字符串进行解密解压
+     *
      * @param compressedStr 待解密解压字符串
      * @return
      */
@@ -50,24 +51,20 @@ public class MessageGZIP {
             return null;
         }
         String decompressed = null;
-        try {
-            byte[] compressed = new BASE64Decoder().decodeBuffer(compressedStr);
-            try (ByteArrayOutputStream out = new ByteArrayOutputStream();
-                ByteArrayInputStream in = new ByteArrayInputStream(compressed);
-                GZIPInputStream gin = new GZIPInputStream(in)) {
+        byte[] compressed = Base64.decode(compressedStr);
+        try (ByteArrayOutputStream out = new ByteArrayOutputStream();
+             ByteArrayInputStream in = new ByteArrayInputStream(compressed);
+             GZIPInputStream gin = new GZIPInputStream(in)) {
 
-                byte[] buffer = new byte[1024];
-                int offset = -1;
-                while((offset = gin.read(buffer)) != -1) {
-                    out.write(buffer, 0, offset);
-                }
-                decompressed = out.toString("UTF-8");
-            } catch (IOException innerE) {
-                log.error("对字符串进行解密解压操作失败：", innerE);
-                decompressed = null;
+            byte[] buffer = new byte[1024];
+            int offset = -1;
+            while ((offset = gin.read(buffer)) != -1) {
+                out.write(buffer, 0, offset);
             }
-        } catch (IOException e) {
-            log.error("对字符串进行解密解压操作失败：", e);
+            decompressed = out.toString("UTF-8");
+        } catch (IOException innerE) {
+            log.error("对字符串进行解密解压操作失败：", innerE);
+            decompressed = null;
         }
         return decompressed;
     }

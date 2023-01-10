@@ -1,7 +1,6 @@
 package com.bkhech.boot.commons.util;
 
-import sun.misc.BASE64Decoder;
-import sun.misc.BASE64Encoder;
+import cn.hutool.core.codec.Base64;
 
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
@@ -10,8 +9,7 @@ import java.nio.charset.StandardCharsets;
 /**
  * @author guowm
  * @date 2020/11/24
- * @description
- *  aes加/解密算法，用于数据加密
+ * @description aes加/解密算法，用于数据加密
  */
 public class AesUtil {
 
@@ -19,6 +17,7 @@ public class AesUtil {
 
     /**
      * 二进制转变为十六进制
+     *
      * @param buf
      * @return java.lang.String
      */
@@ -36,6 +35,7 @@ public class AesUtil {
 
     /**
      * 将十六进制转变为二进制
+     *
      * @param hexStr
      * @return byte[]
      */
@@ -54,6 +54,7 @@ public class AesUtil {
 
     /**
      * 加密(PKCS5Padding)
+     *
      * @param content
      * @return java.lang.String
      */
@@ -66,7 +67,7 @@ public class AesUtil {
 
 //            return parseByte2HexStr(encryptedData);
             //更少的长度
-            return new BASE64Encoder().encode(encryptedData);
+            return Base64.encode(encryptedData);
         } catch (Exception e) {
             throw new Exception("加密失败");
         }
@@ -74,12 +75,13 @@ public class AesUtil {
 
     /**
      * 解密
+     *
      * @param content
      * @return java.lang.String
      */
     public static String decrypt(String content) throws Exception {
 //        byte[] contentBytes = parseHexStr2Byte(content);
-        byte[] contentBytes = new BASE64Decoder().decodeBuffer(content);
+        byte[] contentBytes = Base64.decode(content);
 
         try {
             SecretKeySpec key = new SecretKeySpec(SECRECY_KEY.getBytes(), "AES");
